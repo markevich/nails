@@ -1,6 +1,17 @@
+<div class="albums">
+	<div class=" col-md-10">
+	
+	<h1>Мои проекты</h1>
+	<hr/>
 <% @albums.each do |album| %>
-<%= link_to album.title, album_images_path(album)  %>
+<div class="col-md-3">
+
 <% if album.images.count > 0 %>
 	<%= image_tag album.images.first.path %>
 <% end %>
+<%= link_to album.title, album_images_path(album)  %>
+</div>
 <% end %>
+
+</div>
+</div>

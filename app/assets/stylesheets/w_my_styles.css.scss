@@ -131,6 +131,7 @@ header{
 	&:hover span{
 		background: lightgrey;
 		top: -100%;
+		color: black;
 	}
 }
 a {
@@ -185,4 +186,54 @@ body {
 }
 .right-content{
 	height: 100%;
+}
+.content {
+	margin-top:6em;
+	padding-left:3em;
+	h1{
+		position: absolute;
+		background: white;
+		display: inline-block;
+		padding-right: 0.5em;
+		top: -6px;
+	}
+	hr{
+		border-top: 2px solid rgb(0, 0, 0);
+	}
+	p:first-child{
+		margin-top: 3em;
+	}
+}
+footer{
+	clear:both;
+}
+.albums{
+	height: 100%;
+	background: url('/assets/project-bg.jpg') no-repeat center center fixed; 
+	 -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	h1{
+		color:white;
+		display:inline-block;
+	}
+	hr {
+border-top: 2px solid white;
+width: 65%;
+display: inline-block;
+margin-left: 1em;
+vertical-align: -11px;
+}
+	a{
+	color: #bdc3c7;
+font-size: 16px;
+padding-top: 12px;
+	}
+	img{
+	max-width: 100%;
+padding: 4px;
+background-color: #F1F1F1;
+	}
+	
 }
