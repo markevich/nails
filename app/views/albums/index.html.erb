@@ -1,0 +1,6 @@
+<% @albums.each do |album| %>
+<%= link_to album.title, album_images_path(album)  %>
+<% if album.images.count > 0 %>
+	<%= image_tag album.images.first.path %>
+<% end %>
+<% end %>

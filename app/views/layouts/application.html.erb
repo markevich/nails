@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nails</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+   <a href="tel:5551234567">Call (555)123-4567</a>
+</header>
+    <div id="sidebar">
+      <div  id="side-bar-nav">
+        <span id="show-all">
+          <i class="fa fa-bars"></i>
+        </span>
+        <nav>
+          <ul class="nav-bar">
+            <li class=<%= current_path_class(root_path) %>>
+              <a href='<%= root_path %>' >
+                <i class="menu-item fa fa-home"></i>
+              </a> 
+              <span>
+                <%= link_to "Главная страница", root_path, class:"" %>
+              </span>
+            </li>
+            <li class=<%= current_path_class(about_index_path) %>>
+              <a href="<%= about_index_path %> ">
+                <i class="menu-item fa fa-user"></i>
+              </a> 
+              <span>
+                <%= link_to "О ногтях", about_index_path, class:"w"  %>
+              </span>
+            </li>
+            <li class=<%= current_path_class(albums_path) %>>
+              <a href="<%= albums_path %> ">
+                <i class="menu-item fa fa-picture-o"></i>
+              </a> 
+              <span>
+                <%= link_to "Фотоальбомы", albums_path, class:"" %>
+            </span>
+          </li class=<%= current_path_class(questions_path) %>>
+            <li>
+              <a href="<%= questions_path %> ">
+                <i class="menu-item fa fa-pencil-square-o"></i>
+              </a>
+              <span>   
+                <%= link_to "Вопрос-ответ", questions_path, class:""  %>
+              </span>
+            </li>
+            <li class=<%= current_path_class(news_index_path) %>>
+              <a href="<%= news_index_path %> ">
+                <i class="menu-item fa fa-th-list"></i> 
+              </a>
+              <span>
+               <%= link_to "Интересное", news_index_path, class:""  %>
+             </span>
+           </li>
+            <li class=<%= current_path_class(prices_path) %>>
+               <a href="<%= prices_path %> ">
+                <i class="menu-item fa fa-shopping-cart"></i>
+              </a>
+              <span>
+                <%= link_to "Цены", prices_path, class:""  %>
+              </span>
+            </li>
+          </ul>
+        </nav>
+      
+    </div>
+  <div class="right-content row">
+        <%= yield %>
+  </div>
+</div>
+<footer>
+footera
+</footer>
+</body>
+</html>
