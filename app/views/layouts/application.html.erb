@@ -10,7 +10,8 @@
 <header>
    <a href="tel:5551234567">Call (555)123-4567</a>
 </header>
-    <div id="sidebar">
+  <div id="wrapper">
+    <aside id="sidebar">
       <div  id="side-bar-nav">
         <span id="show-all">
           <i class="fa fa-bars"></i>
@@ -68,10 +69,12 @@
           </ul>
         </nav>
       
-    </div>
-  <div class="right-content row">
+  </aside>
+
+  <article class="right-content row">
         <%= yield %>
-  </div>
+  </article>
+</div>
 </div>
 <footer>
 footera

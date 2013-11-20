@@ -1,37 +1,87 @@
 $colorLink: #18bc9c;
-
+$colorLinkHover: #bdc3c7!important;
+$red: #ed4e6e;
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext);
+$font: 'PT Sans Narrow', sans-serif;
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+$fontContent:'PT Sans', sans-serif;
 h1, h2, h3 {
 	margin-top: 0;
 	margin-bottom: 10.5px;
 }
+h1, h2, h3, h4, h5, h6{
+	font-family: $font;
+}
+
 a{
 	color: $colorLink!important;
 	text-decoration: none!important;
+	&:hover{
+		color: #bdc3c7 !important;
+	}
 }
 a.list-group-item {
 	color: #555555;
 	text-decoration: none!important;
 }
-.carousel-inner{
-	height:14em;
-	overflow:hidden;
-	img{
-		width:100%;
-	}
+#wrapper {
+	width: 100%;
+	height: 100%;
 }
-//header
+/*функции*/
+@mixin border-radius ($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin transition-property($arguments) {
+    -webkit-transition: $arguments;
+    -moz-transition: $arguments;
+    -o-transition: $arguments;
+    transition: $arguments;
+}
+@mixin background-size ($arguments) {
+    -webkit-background-size:  $arguments;
+	-moz-background-size:  $arguments;
+	-o-background-size:  $arguments;
+	background-size:  $arguments;
+}
+@mixin box-shadow($arguments, $argument){
+	-webkit-box-shadow: $arguments, $argument;
+	-moz-box-shadow: $arguments, $argument;
+	box-shadow: $arguments, $argument;
+}
+@mixin transform($arg){
+	-webkit-transition: -webkit-transform $arg;
+	-moz-transition: -moz-transform $arg;
+	transition: transform $arg;
+}
+@mixin translateY($arg){
+	-webkit-transform: translateY($arg);
+	-moz-transform: translateY($arg);
+	-ms-transform: translateY($arg);
+	transform: translateY($arg);
+}
+/* .a (~"$e, $r"){} */
+
 header{
 	background: black;
 	height: 3em;
-		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
-	box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+	@include box-shadow(0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1));
+	a{
+		display: block;
+		padding-top: 0.7em;
+		padding-left: 1em;
+	}
+}
+blockquote {
+	border-left: 5px solid #18bc9c;
 }
 //sidebar
 #sidebar{
 	height: 100%;
-	width: 100%;
-	position: fixed;
+	float: left;
+	/* width: 100%; */
 	i{
 		color: white;
 		cursor:pointer;
@@ -46,24 +96,15 @@ header{
 		li{
 			margin-bottom: 1em;
 			list-style-type: none;
-			transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			-webkit-transition: all 0.2s ease-in-out;
-			-o-transition: all 0.2s ease-in-out;
+			@include transition-property(all 0.2s ease-in-out);
 			opacity: 0.5;
 			span{
-    			-webkit-transition: all 1s ease-in-out;
-			    -moz-transition: all 1s ease-in-out;
-			    -o-transition: all 1s ease-in-out;
-			    transition: all 1s ease-in-out;
+			    @include transition-property(all 1s ease-in-out);
 			    display: none;	
 				a{ 
-					transition: 1s ease-in-out; 
-					-moz-transition: 1s ease-in-out; 
-					-webkit-transition: 1s ease-in-out; 
+					@include transition-property(1s ease-in-out);
 					opacity: 0;
-				}
-					
+				}	
 			}
 			a{
 				color: white!important;
@@ -73,28 +114,22 @@ header{
 			}
 		}
 	}
+	/*страница menu*/
 	#side-bar-nav{
 		width: 67px;
-		float: left;
 		padding-left: 1.4em;
 		height: 100%;
 		background: $colorLink;
 		display: inline-block;
 		padding-right: 1.4em;
 		padding-top: 1.5em;
-		-webkit-transition: all 0.3s ease-in-out;
-	    -moz-transition: all 0.3s ease-in-out;
-	    -o-transition: all 0.3s ease-in-out;
-	    transition: all 0.3s ease-in-out;
+		@include transition-property(all 0.3s ease-in-out);
 		span{
 			i{
 				opacity:0.5;
 				font-size: 1.3em;
 				margin-bottom: 2em;
-				transition: all 0.2s ease-in-out;
-				-moz-transition: all 0.2s ease-in-out;
-				-webkit-transition: all 0.2s ease-in-out;
-				-o-transition: all 0.2s ease-in-out;
+				@include transition-property(all 0.2s ease-in-out);
 				&:hover{
 					opacity: 1;
 				}
@@ -106,17 +141,16 @@ header{
 //buttons
 .sf-roll-button {
 	display: inline-block;
+	padding: 0;
 	height: 40px;
 	line-height: 40px;
 	overflow: hidden;
 	position: relative;
 	text-align: center;
-	padding: 0 14px;
 	transition: all 0.35s;
 	color:white!important;
-
 	span{
-	text-transform: uppercase;
+		text-transform: uppercase;
 		cursor:pointer;
 		background: $colorLink;
 		display: block;
@@ -129,16 +163,13 @@ header{
 
 	}
 	&:hover span{
-		background: lightgrey;
+		background: $red;
 		top: -100%;
-		color: black;
+		color: white;
 	}
 }
 a {
-	transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-webkit-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
+	@include transition-property(all 0.2s ease-in-out);
 }
  html {
 	height: 100%;
@@ -147,38 +178,33 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	background: #ecf0f1;
 }
+
 .span-vis{
 	opacity: 1;
-	width: 190p
+	width: 190px;
 }
 .padding-left-a{
-	-webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    @include transition-property(all 0.3s ease-in-out);
 	padding-left: 210px !important;
 }
 .padding-left-b{
-	-webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    @include transition-property(all 0.3s ease-in-out);
 	padding-left: 87px !important;
 }
+/*страница привествия*/
 .welcome{
 	height: 100%;
 	background: url('/assets/bg-1.jpg') no-repeat center center fixed; 
-	 -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
+	@include background-size (cover);
 	h1{
+		font-size: 3.5em;
 		color: white;
 	} 
 	> div{
 		position:relative;
-		top: 50%;
+		top: 40%;
 		p{
 			color: white;
 		}
@@ -186,54 +212,129 @@ body {
 }
 .right-content{
 	height: 100%;
+	width: 100%;
+	margin: 0;
 }
-.content {
-	margin-top:6em;
-	padding-left:3em;
+/*страница описания*/
+section{
+	padding-top: 5em;
+	padding-left: 4em;
 	h1{
-		position: absolute;
-		background: white;
+		position: relative;
 		display: inline-block;
-		padding-right: 0.5em;
-		top: -6px;
+		margin-bottom: 0;
+		font-size: 3.5em;
+		margin-bottom: .5em;
+		float: left;
+		margin-right: 0.5em;
+		+ hr{
+			border-top: 2px solid #2c3e50;
+			display: block;
+			margin-top: 2.5em;
+			& ~ div, & ~ blockquote, & ~ p{ 
+				clear: both;
+			}
+		}
 	}
-	hr{
-		border-top: 2px solid rgb(0, 0, 0);
+
+	h1, h2, h3, h4, h5 , h6{
+		display: inline-block;
 	}
 	p:first-child{
 		margin-top: 3em;
 	}
+
 }
+
+/*страница подвал*/
 footer{
 	clear:both;
 }
+
+/*страница альбомы*/
+.project{
+	padding-left: 3em;
+}
 .albums{
+	display: block;
 	height: 100%;
 	background: url('/assets/project-bg.jpg') no-repeat center center fixed; 
-	 -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
+	@include background-size (cover);
 	h1{
-		color:white;
-		display:inline-block;
+		margin-bottom: 1em;
+		color: white;
+		display: inline-block;
+		font-size: 4em;
+		opacity: 0.8;
 	}
 	hr {
-border-top: 2px solid white;
-width: 65%;
-display: inline-block;
-margin-left: 1em;
-vertical-align: -11px;
-}
-	a{
-	color: #bdc3c7;
-font-size: 16px;
-padding-top: 12px;
+		opacity: 0.8;
+		border-top: 2px solid white;
+		width: 65%;
+		display: inline-block;
+		margin-left: 1em;
+		vertical-align: -11px;
 	}
-	img{
-	max-width: 100%;
-padding: 4px;
-background-color: #F1F1F1;
+	.name-album{
+		text-align: center;
+		padding: 1em 0;
+		a{
+			color: white!important;
+			font-size: 1.2em;
+			font-family: "PT Sans Narrow", sans-serif;
+			display: inline-block;
+			background: $colorLink;
+			padding: 0.1em 0.5em;
+			text-align: center;
+			@include transition-property(all 0.2s ease-in-out); 
+			&:hover{
+				background: $red;
+			}
 	}
-	
+
+	}
+	.img-album{
+		img{	
+		padding: 2%;
+		background-color: #F1F1F1;
+		max-width: 96%;
+		@include transition-property(all 0.2s ease-in-out); 
+		}
+	}
+	.grid{
+		margin-bottom: 3em;
+	}
+	.project figure {
+		margin: 0;
+		position: relative;
+		margin-bottom: 3em;
+		img {
+			z-index: 10;
+			position: relative;
+			@include transform(0.4s);
+			width: 100%;
+			border: 4px solid $colorLinkHover;
+		}
+		figcaption {
+		   	width: 100%;
+			top: auto;
+			position: absolute;
+			bottom: 0;
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+			background: #2c3f52;
+			height: 3em;
+			padding: 0.5em 0.5em!important;
+			text-align: right!important;
+			margin-right: 1em;	
+		}
+		&:hover img{
+			@include translateY(-3em);
+		}
+	}
+
+		
 }
+
+

@@ -1,3 +1,5 @@
+
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -64,5 +66,5 @@ function padding(){
 	var width = $("#side-bar-nav").width() + 42;
 	var padLeft = 20;
 	var left = width + padLeft;
-	$(".right-content").css("padding-left", left);
+	$(".right-content").css("left", left);
 }
