@@ -1,28 +1,25 @@
  <section class="albums">
-	<div class="container">
-		<div class="row">
-			<div class=" col-md-10 col-xs-10">
-				<h1>Мои проекты</h1>
-				<hr/>
-				<% @albums.each_slice(3) do |slice| %>
-					<div class="row">
-					<% slice.each do |album| %>
-						<div class="col-md-4 project col-xs-4 ">	
-						<figure>
-							<% if album.images.count > 0 %>
-								<%= image_tag album.images.first.path %>
-							<% end %>
-					
-							<figcaption class="name-album">
-							<%= link_to album.title, album_images_path(album)  %>
-							</figcaption>
-						</figure>
-						</div>
+	<div class=" col-md-12 col-xs-12">
+		<h1>Мои проекты</h1>
+		<hr/>
+		<% @albums.each_slice(3) do |slice| %>
+			<div class="row">
+			<% slice.each do |album| %>
+				<div class="col-md-4 project col-xs-4 ">	
+				<figure>
+					<% if album.images.count > 0 %>
+						<%= image_tag album.images.first.path %>
 					<% end %>
-					</div>
-				<% end %>
+			
+					<figcaption class="name-album">
+					<span><%= album.title%></span>
+					<%= link_to "Пререйти", album_images_path(album) %>
+					</figcaption>
+				</figure>
+				</div>
+			<% end %>
 			</div>
-		</div>
+		<% end %>
 	</div>
 </section>
 

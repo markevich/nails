@@ -1,4 +1,12 @@
-<% @news.each do |n| %> 
-  <%= n.title %> <br> 
-  <%= n.text %>
-<% end %>
+<section class="news">
+	<div class=" col-md-10 col-xs-10">
+		<h1>Интересное о ногтях.</h1>
+		<hr/>
+		<div>
+			<% @news.each do |n| %> 
+			  <h3><%= n.title %> </h3><br> 
+			  <%= n.text %><br> 
+			<% end %>
+		</div>
+	</div>
+</section>

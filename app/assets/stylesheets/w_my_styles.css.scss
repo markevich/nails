@@ -17,7 +17,7 @@ a{
 	color: $colorLink!important;
 	text-decoration: none!important;
 	&:hover{
-		color: #bdc3c7 !important;
+		color: #ed4e6e !important;
 	}
 }
 a.list-group-item {
@@ -51,6 +51,11 @@ a.list-group-item {
 	-moz-box-shadow: $arguments, $argument;
 	box-shadow: $arguments, $argument;
 }
+@mixin box-shadow-one($arguments){
+	-webkit-box-shadow: $arguments;
+	-moz-box-shadow: $arguments;
+	box-shadow: $arguments;
+}
 @mixin transform($arg){
 	-webkit-transition: -webkit-transform $arg;
 	-moz-transition: -moz-transform $arg;
@@ -65,13 +70,33 @@ a.list-group-item {
 /* .a (~"$e, $r"){} */
 
 header{
-	background: black;
+	position: fixed;
+	z-index: 11;
+	width: 100%;
+	background-color: #181818;
 	height: 3em;
+	h3{
+		padding-top: 0.3em;
+		padding-left: 1em;
+		color: #bfbfbf;
+		display: inline-block;
+	}
 	@include box-shadow(0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1));
 	a{
-		display: block;
+		display: inline-block;
 		padding-top: 0.7em;
 		padding-left: 1em;
+	}
+	div{
+		text-align: right;
+		float: right;
+		margin-right: 1em;
+		span{
+			color: #bfbfbf;
+			font-size: 1.2em;
+			padding-left: 1em;
+		}
+
 	}
 }
 blockquote {
@@ -80,7 +105,7 @@ blockquote {
 //sidebar
 #sidebar{
 	height: 100%;
-	float: left;
+	position: fixed;
 	/* width: 100%; */
 	i{
 		color: white;
@@ -122,7 +147,7 @@ blockquote {
 		background: $colorLink;
 		display: inline-block;
 		padding-right: 1.4em;
-		padding-top: 1.5em;
+		padding-top: 5em;
 		@include transition-property(all 0.3s ease-in-out);
 		span{
 			i{
@@ -194,17 +219,21 @@ body {
 	padding-left: 87px !important;
 }
 /*страница привествия*/
-.welcome{
-	height: 100%;
+.index{
 	background: url('/assets/bg-1.jpg') no-repeat center center fixed; 
 	@include background-size (cover);
+}
+.welcome{
+	height: 100%;
 	h1{
 		font-size: 3.5em;
 		color: white;
+		display: block;
+		width: 100%;
 	} 
 	> div{
 		position:relative;
-		top: 40%;
+		margin-top: 20%;
 		p{
 			color: white;
 		}
@@ -218,7 +247,8 @@ body {
 /*страница описания*/
 section{
 	padding-top: 5em;
-	padding-left: 4em;
+	padding-left: 100px;
+	@include transition-property(all 0.2s ease-in-out);
 	h1{
 		position: relative;
 		display: inline-block;
@@ -249,17 +279,21 @@ section{
 /*страница подвал*/
 footer{
 	clear:both;
+	text-align: right;
 }
 
 /*страница альбомы*/
 .project{
 	padding-left: 3em;
 }
+.page-album{
+	background: url('/assets/project-bg.jpg') no-repeat center center fixed; 
+	@include background-size (cover); 
+}
 .albums{
 	display: block;
-	height: 100%;
-	background: url('/assets/project-bg.jpg') no-repeat center center fixed; 
-	@include background-size (cover);
+ 	height: 100%;
+	
 	h1{
 		margin-bottom: 1em;
 		color: white;
@@ -320,21 +354,124 @@ footer{
 			top: auto;
 			position: absolute;
 			bottom: 0;
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			backface-visibility: hidden;
 			background: #2c3f52;
 			height: 3em;
 			padding: 0.5em 0.5em!important;
 			text-align: right!important;
 			margin-right: 1em;	
+			span{
+				color: $colorLinkHover;
+				margin-right: 0.3em;
+				overflow: hidden;
+				float: left;
+				height: 22px;
+				margin-top: 0.2em;
+			}
 		}
 		&:hover img{
 			@include translateY(-3em);
 		}
-	}
+		a{
+			position: absolute;
+			right: 13px;
+		}
+	}	
+}
 
-		
+.left-content-one{
+	padding-left: 220px;
+}
+.left-content-two{
+	padding-left: 100px;
+}
+
+.flexslider {
+	border: 4px solid #2c3f52!important;
+	background: #2c3f52!important;
+}
+.flex-direction-nav a{
+	height: 45px!important;
+}
+#carousel.flexslider .slides > li{
+	margin: 3px !important;
 }
 
 
+.title-images-album {
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	@include translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+	position: absolute;
+	padding: 0 1em;
+	height: 2em;
+	color: $colorLink;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+}
+#slider:hover .title-images-album {
+	opacity: 1;
+	@include translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.news{
+	h3{
+		margin-top: 1.5em;
+	}
+	h3:first-child{
+		margin-top: 0;
+	}
+	> div{
+		padding-bottom: 2em;
+	}
+}
+
+.text-right{
+	text-align: right;
+}
+.price{
+	h3{
+		margin-top: 2em;
+	}
+	.map{
+		padding-bottom: 2em;
+	}
+.pricing-column{
+	margin:0;
+	padding: 0;
+	margin-bottom: 1em;
+	li {
+		text-align: center;
+		list-style-type: none;
+		margin: 0;
+		padding: 12px;
+		background: rgba(0,0,0,0.01);
+		border-bottom: 1px dotted rgba(0,0,0,0.1);
+		&:nth-child(even){
+			background: #e3e3e3;
+		}
+		&.pricing-price {
+			color: $colorLink;
+			line-height: 120%;
+		}
+		&.pricing-title {
+			font-weight: 600;
+			border-top: 4px solid $colorLink;
+		}
+	}
+	&:hover{
+		z-index: 1;
+		@include box-shadow-one(0 0 20px 0 rgba(0,0,0,0.4));
+		li.pricing-title{
+			font-weight: 600;
+			border-top: 4px solid $red;
+		}
+	}
+}
+}

@@ -1,17 +1,28 @@
-<section>
-	<div class="container">
+<section class="price">
+	<div class="col-md-10 col-xs-10">			
+		<h1>Наши цены</h1>
+		<hr/>
+		<% @prices.each_slice(3) do |price| %>
+			<div class="row">
+			<% price.each do |p| %>
+			<div class="col-lg-4 col-md-2">
+				<ul class="pricing-column">
+					<li class="pricing-title">
+           		<%= p.title %>
+           			</li>
+           			<li>
+				<%= p.price %>
+					</li>
+				</ul>
+			</div>
+			<% end %>
+			</div>
+		<% end %>
 		<div class="row">
-			<div class="col-md-10 col-xs-10">			
-				<h1>Наши цены</h1>
-				<hr/>
-				<div>	
-					<% @prices.each do |price| %>
-					  <%= price.title %>
-					  <%= price.price %>
-					<% end %>
-				</div>
+			<div class="col-xs-12 col-md-12 map">
+				<address><h3>Наш адрес: ул.Я.Брыля, 22</h3></address>
+<script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=C_zkENPAZJXMxp_4gE18YYlw8dY4Q9G9&width=100%&height=350"></script>
 			</div>
 		</div>
 	</div>
 </section>
-

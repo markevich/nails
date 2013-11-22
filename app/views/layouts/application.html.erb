@@ -2,13 +2,21 @@
 <html>
 <head>
   <title>Nails</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag   "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="tanya" content="gvardi0@gmaol.com">
+  <meta name="description" content="Оказываем услуги: по наращиванию ногтей и ресниц, массаж">
 </head>
-<body>
+<body  class=<%= current_page?(albums_path) ? 'page-album' : '' %><%= current_page?(root_path) ? 'index' : '' %> >
 <header>
-   <a href="tel:5551234567">Call (555)123-4567</a>
+ 
+     <h3>Наращивание ногтей</h3>
+    <div class="text-right">
+     <a href="tel:375296333269"> vel: +37529 633-32-69</a>
+     <a href="tel:375296333269"> mts: +37529 833-39-41</a>
+     <span>e-mail: niko4ka@mail.ru</span>
+    </div>
 </header>
   <div id="wrapper">
     <aside id="sidebar">
@@ -41,8 +49,8 @@
               <span>
                 <%= link_to "Фотоальбомы", albums_path, class:"" %>
             </span>
-          </li class=<%= current_path_class(questions_path) %>>
-            <li>
+          </li >
+            <li class=<%= current_path_class(questions_path) %>>
               <a href="<%= questions_path %> ">
                 <i class="menu-item fa fa-pencil-square-o"></i>
               </a>
@@ -76,8 +84,8 @@
   </article>
 </div>
 </div>
-<footer>
+<!-- <footer>
 footera
-</footer>
+</footer> -->
 </body>
 </html>

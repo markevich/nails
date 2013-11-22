@@ -13,10 +13,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require_tree .
 //= require turbolinks
-//= require_tree 	.
 //= require bootstrap
+//= require jquery.flexslider
 
 $(document).on('ready page:load', function(){
 	$('.carousel').carousel();
@@ -25,24 +25,42 @@ $(document).on('ready page:load', function(){
 	$("#show-all").on('click',function(){ 
 		showHide();
 		showOpacity();
-		
 	});
-	
-})
+	 $('#carousel').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false,
+		itemWidth: 210,
+		itemMargin: 5,
+		asNavFor: '#slider'
+	});
+	$('#slider').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false,
+		itemMargin: 5,
+		sync: "#carousel"
+	});
+});
+
+
 
 
 function showHide(){
 	var span = $(".nav-bar").find("span")
 	if ($(".nav-bar").find("span").is(":visible")){
 		$("#show-all").find("i").css("opacity","0.5");
-		$("#side-bar-nav").css("width","67");
-		//$(".right-content").removeClass("padding-left-a");
-		//$(".right-content").addClass("padding-left-b");
+		$("#side-bar-nav").css("width","67");	
+		$(".right-content > section").addClass("left-content-two");	
+		$(".right-content > section").removeClass("left-content-one");
+		
 	}else{
 		$("#show-all").find("i").css("opacity","1");
-		$("#side-bar-nav").css("width","190")
-		//$(".right-content").addClass("padding-left-a");
-		//$(".right-content").removeClass("padding-left-b");
+		$("#side-bar-nav").css("width","195")
+		$(".right-content > section").addClass("left-content-one");	
+		$(".right-content > section").removeClass("left-content-two");
 	}
 }
 
@@ -56,15 +74,6 @@ function showOpacity(){
 		setTimeout(function(){
 			span.css("display","inline-block");
 			a.css("opacity","1");
-		}, 300);
-		
+		}, 300);	
 	}
-	
-
-}
-function padding(){
-	var width = $("#side-bar-nav").width() + 42;
-	var padLeft = 20;
-	var left = width + padLeft;
-	$(".right-content").css("left", left);
 }
