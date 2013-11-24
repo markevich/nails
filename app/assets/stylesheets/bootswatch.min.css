@@ -5865,7 +5865,7 @@ a.list-group-item .list-group-item-heading {
 
 a.list-group-item:hover,
 a.list-group-item:focus {
-  text-decoration: none!importnat;
+  text-decoration: none;
   background-color: #ecf0f1;
 }
 
