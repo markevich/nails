@@ -69,7 +69,7 @@
 	position: relative;
 	top: 1px;
 	display: inline-block;
-	font-family: 'Glyphicons Halflings';
+	font-family: 'Glyphicons Halflings'!important;
 	-webkit-font-smoothing: antialiased;
 	font-style: normal;
 	font-weight: normal;
@@ -77,8 +77,8 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 .flex-next:before {
-	content: "\e080";
+	content: "\e080"!important;
 }
 .flex-prev:before {
-	content: "\e079";
+	content: "\e079"!important;
 }
