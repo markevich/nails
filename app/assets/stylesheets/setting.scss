@@ -3,15 +3,9 @@ $colorLinkHover: #bdc3c7!important;
 $red: #ed4e6e;
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext);
 $font: 'PT Sans Narrow', sans-serif;
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
-$fontContent:'PT Sans', sans-serif;
-h1, h2, h3 {
-	margin-top: 0;
-	margin-bottom: 10.5px;
-}
-h1, h2, h3, h4, h5, h6{
-	font-family: $font;
-}
+/* @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+$fontContent:'PT Sans', sans-serif; */
+
 
 a{
 	color: $colorLink!important;
@@ -28,6 +22,14 @@ body {
 	padding: 0;
 	height: 100%;
 	background: #ecf0f1;
+	font-family: Arial;
+}
+h1, h2, h3 {
+	margin-top: 0;
+	margin-bottom: 10.5px;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: $font;
 }
 /*функции*/
 @mixin border-radius ($radius) {
@@ -106,6 +108,9 @@ a {
 .index{
 	background: url('/assets/bg-1.jpg') no-repeat center center fixed; 
 	@include background-size (cover);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale')";
+
 }
 blockquote{
 	border-left: 5px solid #18bc9c !important

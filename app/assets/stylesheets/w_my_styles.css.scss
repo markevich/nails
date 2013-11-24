@@ -101,6 +101,7 @@ header{
 		/*страница привествия*/
 		.welcome{
 			height: 100%;
+			font-size: 110%;
 			h1{
 				font-size: 3.5em;
 				color: white;
@@ -116,6 +117,7 @@ header{
 			}
 		}
 		section{
+			margin-top: 1%;
 			padding-top: 5em;
 			padding-left: 100px;
 			@include transition-property(all 0.2s ease-in-out);
@@ -149,6 +151,9 @@ header{
 	/*страница альбомы*/
 	.project{
 		padding-left: 3em;
+	}
+	.album-images{
+		margin-top: 3%;
 	}
 	.albums{
 		display: block;
@@ -254,6 +259,9 @@ header{
 	h3{
 		margin-top: 2em;
 	}
+	.max-price-width{
+		max-width: 24em;
+	}
 	.map{
 		padding-bottom: 2em;
 	}
@@ -299,6 +307,9 @@ header{
 	}
 	label{
 		margin-bottom: 1em;
+	}
+	.max-width-about{
+		max-width: 20em;
 	}
 }
 }
