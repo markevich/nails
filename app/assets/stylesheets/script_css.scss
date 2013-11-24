@@ -13,10 +13,10 @@
  }
 
  .page-album{
- 	background: url(image_puth('project-bg.jpg')) no-repeat center center fixed; 
+ 	background: url(image_path('project-bg.jpg')) no-repeat center center fixed; 
  	@include background-size (cover); 
- 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale')";
+ 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_path('project-bg.jpg')}, sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_path('project-bg.jpg')}, sizingMethod='scale')";
  }
 
  .left-content-one{
