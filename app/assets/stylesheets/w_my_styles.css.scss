@@ -100,7 +100,6 @@ header{
 	margin: 0;
 		/*страница привествия*/
 		.welcome{
-
 			height: 100%;
 			font-size: 110%;
 			h1{
@@ -118,6 +117,10 @@ header{
 				p{
 					color: white;
 				}
+			}
+			a{
+				margin-top: 1em;
+				opacity: 1;
 			}
 		}
 		section{
