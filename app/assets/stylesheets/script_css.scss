@@ -64,21 +64,3 @@
  .expanded{
  	width: 195px!important;
  }
-
-.flex-next, .flex-prev{
-	position: relative;
-	top: 1px;
-	display: inline-block;
-	font-family: 'Glyphicons Halflings'!important;
-	-webkit-font-smoothing: antialiased;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-moz-osx-font-smoothing: grayscale;
-}
-.flex-next:before {
-	content: "\e080"!important;
-}
-.flex-prev:before {
-	content: "\e079"!important;
-}
