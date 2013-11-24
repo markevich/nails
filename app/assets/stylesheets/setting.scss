@@ -1,0 +1,115 @@
+$colorLink: #18bc9c;
+$colorLinkHover: #bdc3c7!important;
+$red: #ed4e6e;
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext);
+$font: 'PT Sans Narrow', sans-serif;
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+$fontContent:'PT Sans', sans-serif;
+h1, h2, h3 {
+	margin-top: 0;
+	margin-bottom: 10.5px;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: $font;
+}
+
+a{
+	color: $colorLink!important;
+	text-decoration: none!important;
+	&:hover{
+		color: #ed4e6e !important;
+	}
+}
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #ecf0f1;
+}
+/*функции*/
+@mixin border-radius ($radius) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+@mixin transition-property($arguments) {
+	-webkit-transition: $arguments;
+	-moz-transition: $arguments;
+	-o-transition: $arguments;
+	transition: $arguments;
+}
+@mixin background-size ($arguments) {
+	-webkit-background-size:  $arguments;
+	-moz-background-size:  $arguments;
+	-o-background-size:  $arguments;
+	background-size:  $arguments;
+}
+@mixin box-shadow($arguments, $argument){
+	-webkit-box-shadow: $arguments, $argument;
+	-moz-box-shadow: $arguments, $argument;
+	box-shadow: $arguments, $argument;
+}
+@mixin box-shadow-one($arguments){
+	-webkit-box-shadow: $arguments;
+	-moz-box-shadow: $arguments;
+	box-shadow: $arguments;
+}
+@mixin transform($arg){
+	-webkit-transition: -webkit-transform $arg;
+	-moz-transition: -moz-transform $arg;
+	transition: transform $arg;
+}
+@mixin translateY($arg){
+	-webkit-transform: translateY($arg);
+	-moz-transform: translateY($arg);
+	-ms-transform: translateY($arg);
+	transform: translateY($arg);
+}
+
+//buttons
+.sf-roll-button {
+	display: inline-block;
+	padding: 0;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	transition: all 0.35s;
+	color:white!important;
+	span{
+		text-transform: uppercase;
+		cursor:pointer;
+		background: $colorLink;
+		display: block;
+		height: 100%;
+		position: relative;
+		top: 0%;
+		transition: top 0.35s;
+		width: 100%;
+		padding: 0 1em;
+
+	}
+	&:hover span{
+		background: $red;
+		top: -100%;
+		color: white;
+	}
+}
+a {
+	@include transition-property(all 0.2s ease-in-out);
+}
+/*страница привествия*/
+.index{
+	background: url('/assets/bg-1.jpg') no-repeat center center fixed; 
+	@include background-size (cover);
+}
+blockquote{
+	border-left: 5px solid #18bc9c !important
+}
+.text-right{
+	text-align: right;
+}

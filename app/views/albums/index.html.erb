@@ -10,10 +10,11 @@
 					<% if album.images.count > 0 %>
 						<%= image_tag album.images.first.path %>
 					<% end %>
-			
 					<figcaption class="name-album">
-					<span><%= album.title%></span>
-					<%= link_to "Пререйти", album_images_path(album) %>
+						<span>
+							<%= album.title %>
+						</span>
+						<%= link_to "Пререйти", album_images_path(album) %>
 					</figcaption>
 				</figure>
 				</div>

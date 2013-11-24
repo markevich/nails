@@ -17,6 +17,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require jquery.flexslider
+//= require jquery.cookie
+//= require jquery.knob
 
 $(document).on('ready page:load', function(){
 	$('.carousel').carousel();
@@ -43,22 +45,40 @@ $(document).on('ready page:load', function(){
 		itemMargin: 5,
 		sync: "#carousel"
 	});
+
+//анимирование кноба
+	$('.knob').each(function () {
+       var $this = $(this);
+       var myVal = $this.attr("rel");
+       $this.knob({
+       });
+       $({
+           value: 0
+       }).animate({
+           value: myVal
+       }, {
+           duration: 2000,
+           easing: 'swing',
+           step: function () {
+               $this.val(Math.ceil(this.value)).trigger('change');
+           }
+       })
+    });
 });
 
 
 
 
 function showHide(){
-	var span = $(".nav-bar").find("span")
 	if ($(".nav-bar").find("span").is(":visible")){
 		$("#show-all").find("i").css("opacity","0.5");
-		$("#side-bar-nav").css("width","67");	
+		$("#side-bar-nav").removeClass('expanded');	
 		$(".right-content > section").addClass("left-content-two");	
 		$(".right-content > section").removeClass("left-content-one");
 		
 	}else{
 		$("#show-all").find("i").css("opacity","1");
-		$("#side-bar-nav").css("width","195")
+		$("#side-bar-nav").addClass('expanded');
 		$(".right-content > section").addClass("left-content-one");	
 		$(".right-content > section").removeClass("left-content-two");
 	}

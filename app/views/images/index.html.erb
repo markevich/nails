@@ -1,29 +1,27 @@
 <section class="album-images">
-	<div class="row">
-		<div class="col-xs-6 col-md-6 col-lg-offset-3">
-			<div id="slider" class="flexslider">
-			  <ul class="slides">
-			  	<% @images.each do |image| %>
-			   		 <li>
-			     	<%= image_tag image.path %>
-			     	<div class="title-images-album">
-			  			<%= image.title %>
-			  		</div>
-			    	</li>
-			     <% end %>
-			  </ul>
-			</div>
-			<% if @images.count >= 2 %>
-			<div id="carousel" class="flexslider">
-			  <ul class="slides">
-			    <% @images.each do |image|%>
-			    	<li>
-			     	<%= image_tag image.path %>
-			    	</li>
-			    <% end %>
-			  </ul>
-			</div>
-			<% end %>
+	<div class="col-xs-6 col-md-6 col-lg-offset-3">
+		<div id="slider" class="flexslider">
+		  <ul class="slides">
+		  	<% @images.each do |image| %>
+		   		 <li>
+		     	<%= image_tag image.path %>
+		     	<div class="title-images-album">
+		  			<%= image.title %>
+		  		</div>
+		    	</li>
+		     <% end %>
+		  </ul>
 		</div>
+		<% if @images.count >= 2 %>
+		<div id="carousel" class="flexslider">
+		  <ul class="slides">
+		    <% @images.each do |image|%>
+		    	<li>
+		     	<%= image_tag image.path %>
+		    	</li>
+		    <% end %>
+		  </ul>
+		</div>
+		<% end %>
 	</div>
 </section>
