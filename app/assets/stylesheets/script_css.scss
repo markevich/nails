@@ -17,7 +17,6 @@
  	@include background-size (cover); 
  	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_path('project-bg.jpg')}, sizingMethod='scale');
 	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_path('project-bg.jpg')}, sizingMethod='scale')";
-
  }
 
  .left-content-one{
