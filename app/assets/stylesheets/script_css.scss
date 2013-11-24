@@ -13,8 +13,11 @@
  }
 
  .page-album{
- 	background: url('/assets/project-bg.jpg') no-repeat center center fixed; 
+ 	background: url(image_puth('project-bg.jpg')) no-repeat center center fixed; 
  	@include background-size (cover); 
+ 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale')";
+
  }
 
  .left-content-one{
@@ -62,3 +65,4 @@
  .expanded{
  	width: 195px!important;
  }
+

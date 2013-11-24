@@ -3,8 +3,6 @@ $colorLinkHover: #bdc3c7!important;
 $red: #ed4e6e;
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext);
 $font: 'PT Sans Narrow', sans-serif;
-/* @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
-$fontContent:'PT Sans', sans-serif; */
 
 
 a{
@@ -106,7 +104,7 @@ a {
 }
 /*страница привествия*/
 .index{
-	background: url('/assets/bg-1.jpg') no-repeat center center fixed; 
+	background: url(image_path('bg-1.jpg')) no-repeat center center fixed; 
 	@include background-size (cover);
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale');
 	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bg-1.jpg', sizingMethod='scale')";
