@@ -14,7 +14,7 @@ set :repository,  "git@github.com:markevich/nails.git"
 set :deploy_via, :remote_cache
 
 
-set :rbenv_ruby_version, "2.0.0-p195"
+set :rbenv_ruby_version, "2.1.0"
 
 server "artoverflow.com", :app, :web, :db, primary: true
 

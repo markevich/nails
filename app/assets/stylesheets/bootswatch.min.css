@@ -1,7 +1,10 @@
 @import url("//fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+body,header{
 
+  min-width: 1145px;
+}
 article,
 aside,
 details,
